@@ -1,9 +1,16 @@
 import "./App.scss";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-red-300">Hello world!</h1>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }
