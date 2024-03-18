@@ -1,0 +1,1 @@
+import "./Factures.scss";
