@@ -1,12 +1,12 @@
 import "./App.scss";
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <NavBar />
       <main>
         <Outlet />
       </main>
