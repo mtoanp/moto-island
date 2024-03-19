@@ -12,8 +12,8 @@ export default function Navbar() {
       <div className="nav-middle"></div>
       <div className="nav-right">
         <div className="nav-links text-green-800">
-          <NavLink to="/api/factures/new">New Facture</NavLink>
-          <NavLink to="/api/factures/history">History</NavLink>
+          <NavLink to="/api/orders/new">New Order</NavLink>
+          <NavLink to="/api/orders/history">History</NavLink>
         </div>
       </div>
     </nav>
