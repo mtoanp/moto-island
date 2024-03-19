@@ -1,8 +1,9 @@
 import "./Home.scss";
+import HomeBackground from "../../assets/snow.svg";
 export default function Home() {
 	return (
 		<div className="home-page">
-			<h1 className="text-3xl font-bold text-red-300">Home Page</h1>
+			<img src={HomeBackground} alt="" />
 		</div>
 	);
 }
