@@ -3,7 +3,7 @@ import App from "./App";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home/Home";
 import History from "./pages/History/History";
-import NewFacture from "./pages/Factures/NewFacture/NewFacture";
+import NewOrder from "./pages/Orders/NewOrder/NewOrder";
 
 const routerConfig = [
   {
@@ -17,7 +17,7 @@ const routerConfig = [
         path: "api/",
         children: [
           {
-            path: "factures/",
+            path: "orders/",
             children: [
               {
                 path: "history",
@@ -25,7 +25,7 @@ const routerConfig = [
               },
               {
                 path: "new",
-                element: <NewFacture />,
+                element: <NewOrder />,
               },
             ],
           },
