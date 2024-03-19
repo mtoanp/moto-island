@@ -4,6 +4,10 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home/Home";
 import History from "./pages/History/History";
 import NewOrder from "./pages/Orders/NewOrder/NewOrder";
+import LogIn from "./pages/LogIn/LogIn";
+import Register from "./pages/Register/Register";
+import Users from "./pages/Users/Users/Users";
+import NewUser from "./pages/Users/NewUser/NewUser";
 
 const routerConfig = [
   {
@@ -12,13 +16,21 @@ const routerConfig = [
     errorElement: <ErrorPage />,
     children: [
       { path: "", element: <Home /> }, // Render Home component when URL is '/'
+      { path: "login", element: <LogIn /> },
+      { path: "register", element: <Register /> },
+
       // API -----------------------------
       {
         path: "api/",
         children: [
+          // ORDERS -----------------------------
           {
             path: "orders/",
             children: [
+              {
+                path: "",
+                element: <History />,
+              },
               {
                 path: "history",
                 element: <History />,
@@ -26,6 +38,21 @@ const routerConfig = [
               {
                 path: "new",
                 element: <NewOrder />,
+              },
+            ],
+          },
+
+          // USERS -----------------------------
+          {
+            path: "users/",
+            children: [
+              {
+                path: "",
+                element: <Users />,
+              },
+              {
+                path: "new",
+                element: <NewUser />,
               },
             ],
           },
