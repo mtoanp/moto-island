@@ -98,6 +98,14 @@ body {
 	}
 }
 
+.btn-warning {
+	background-color: #ff9800;
+	color: white;
+	&:hover {
+		background-color: #e68a00;
+	}
+}
+
 .btn-danger {
 	background-color: #d83c31;
 	color: white;

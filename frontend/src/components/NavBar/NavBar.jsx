@@ -7,7 +7,6 @@ export default function NavBar() {
   const { currentUser, isAdmin, authLogOut } = useAuth(); //
 
   const handleLogout = () => {
-    console.log("Logout");
     authLogOut();
   };
 
