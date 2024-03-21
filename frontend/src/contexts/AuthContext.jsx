@@ -6,7 +6,8 @@ const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null); //
+  const [currentUser, setCurrentUser] = useState("admin"); //
+  // const [currentUser, setCurrentUser] = useState(null); //
 
   const authLogIn = (user) => {
     setCurrentUser(user);
