@@ -11,15 +11,16 @@ export default function NavBar() {
 	};
 
 	return (
-		<nav className="navBar justify-between flex items-center w-[100%] ">
-			<div className="nav-left p-8">
+		<nav className="navBar justify-center gap-[4vw] flex items-center w-[100%] ">
+			<div className="nav-left ">
 				<NavLink to="/" className="logo">
-					<div className="hover:text-gray-500">Logo</div>
+					<div className="bg-gray-500 text-black px-2 py-2 rounded-full hover:text-white">
+						Home
+					</div>
 				</NavLink>
 			</div>
-			{/* <div className="nav-middle"></div> */}
-			<div className="nav-right p-9">
-				<div className="nav-links text-black  flex gap-[4vw]">
+			<div className="nav-middle ">
+				<div className="nav-links text-black flex gap-[4vw]  px-2 py-2 rounded-full">
 					{!currentUser && (
 						<>
 							<NavLink to="/register hover:text-gray-500">
@@ -31,7 +32,6 @@ export default function NavBar() {
 							</NavLink>
 						</>
 					)}
-
 					{currentUser && currentUser === "user" && (
 						<>
 							<NavLink to="/api/orders/new">
@@ -41,12 +41,8 @@ export default function NavBar() {
 								{" "}
 								<div className="hover:text-gray-500">History</div>
 							</NavLink>
-							<a onClick={handleLogout} className="text-red-300 cursor-pointer">
-								<div className="hover:text-gray-500">Log Out</div>
-							</a>
 						</>
 					)}
-
 					{currentUser && currentUser === "admin" && (
 						<>
 							<NavLink to="/api/users">
@@ -57,12 +53,17 @@ export default function NavBar() {
 								{" "}
 								<div className="hover:text-gray-500">Orders</div>
 							</NavLink>
-							<a onClick={handleLogout} className="text-red-300 cursor-pointer">
-								<div className="hover:text-gray-500">Log Out</div>
-							</a>
 						</>
 					)}
 				</div>
+			</div>
+			<div className="nav-right">
+				<button
+					onClick={handleLogout}
+					className="bg-black text-white px-2 py-2 rounded-full"
+				>
+					<div className="hover:text-gray-500">Log Out</div>
+				</button>
 			</div>
 		</nav>
 	);
