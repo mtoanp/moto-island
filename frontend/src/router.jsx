@@ -8,6 +8,8 @@ import LogIn from "./pages/LogIn/LogIn";
 import Register from "./pages/Register/Register";
 import Users from "./pages/Users/Users/Users";
 import NewUser from "./pages/Users/NewUser/NewUser";
+import UserDetails from "./pages/Users/UserDetails/UserDetails";
+import UpdateUser from "./pages/Users/UpdateUser/UpdateUser";
 
 const routerConfig = [
   {
@@ -51,8 +53,16 @@ const routerConfig = [
                 element: <Users />,
               },
               {
+                path: ":id",
+                element: <UserDetails />,
+              },
+              {
                 path: "new",
                 element: <NewUser />,
+              },
+              {
+                path: ":id/edit",
+                element: <UpdateUser />,
               },
             ],
           },
