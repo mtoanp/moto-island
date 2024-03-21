@@ -11,38 +11,54 @@ export default function NavBar() {
 	};
 
 	return (
-		<nav className="navBar">
-			<div className="nav-left">
+		<nav className="navBar justify-between flex items-center w-[100%] ">
+			<div className="nav-left p-8">
 				<NavLink to="/" className="logo">
-					Logo
+					<div className="hover:text-gray-500">Logo</div>
 				</NavLink>
 			</div>
-			<div className="nav-middle"></div>
-			<div className="nav-right">
-				<div className="nav-links text-green-800">
+			{/* <div className="nav-middle"></div> */}
+			<div className="nav-right p-9">
+				<div className="nav-links text-black  flex gap-[4vw]">
 					{!currentUser && (
 						<>
-							<NavLink to="/register">Register</NavLink>
-							<NavLink to="/login">Login</NavLink>
+							<NavLink to="/register hover:text-gray-500">
+								{" "}
+								<div className="hover:text-gray-500">Register</div>
+							</NavLink>
+							<NavLink to="/login" hover:text-gray-500>
+								<div className="hover:text-gray-500">Login</div>
+							</NavLink>
 						</>
 					)}
 
 					{currentUser && currentUser === "user" && (
 						<>
-							<NavLink to="/api/orders/new">New Order</NavLink>
-							<NavLink to="/api/orders/history">History</NavLink>
+							<NavLink to="/api/orders/new">
+								<div className="hover:text-gray-500">New Order</div>
+							</NavLink>
+							<NavLink to="/api/orders/history">
+								{" "}
+								<div className="hover:text-gray-500">History</div>
+							</NavLink>
 							<a onClick={handleLogout} className="text-red-300 cursor-pointer">
-								Logout
+								<div className="hover:text-gray-500">Log Out</div>
 							</a>
 						</>
 					)}
 
 					{currentUser && currentUser === "admin" && (
 						<>
-							<NavLink to="/api/users">Users</NavLink>
-							<NavLink to="/api/orders">Orders</NavLink>
+							<NavLink to="/api/users">
+								{" "}
+								<div className="hover:text-gray-500">Users</div>
+							</NavLink>
+							<NavLink to="/api/orders">
+								{" "}
+								<div className="hover:text-gray-500">Orders</div>
+							</NavLink>
 							<a onClick={handleLogout} className="text-red-300 cursor-pointer">
-								Logout
+								<div className="hover:text-gray-500">Log Out</div>
 							</a>
 						</>
 					)}
