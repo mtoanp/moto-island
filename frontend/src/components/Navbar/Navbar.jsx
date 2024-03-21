@@ -3,16 +3,15 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
-	const [currentUser, setCurrentUser] = useState("user"); // [1
+	const [currentUser, setCurrentUser] = useState("user"); //
 
 	const handleLogout = () => {
 		console.log("Logout");
 		setCurrentUser(null);
 	};
-
 	return (
 		<nav className="navBar justify-center gap-[4vw] flex items-center w-[100%] ">
-			<div className="nav-left ">
+			<div className="nav-left">
 				<NavLink to="/" className="logo">
 					<div className="bg-gray-500 text-black px-2 py-2 rounded-full hover:text-white">
 						Home
