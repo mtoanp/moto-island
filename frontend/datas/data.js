@@ -1,21 +1,21 @@
-const users = [
+const usersData = [
   {
     id: 1,
-    name: "John Doe",
-    email: "john@example.com",
+    username: "John Doe",
+    password: "123456",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    email: "jane@example.com",
+    username: "Jane Smith",
+    password: "123456",
   },
 ];
 
-const orders = [
+const ordersData = [
   {
     id: 1,
     client: "John Doe",
   },
 ];
 
-export { users, orders };
+export { usersData, ordersData };

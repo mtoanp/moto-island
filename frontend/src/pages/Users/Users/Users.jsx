@@ -1,22 +1,33 @@
 import "./Users.scss";
-import { users } from "../../../../datas/data";
+import { usersData } from "../../../../datas/data";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Users() {
   const navigate = useNavigate();
+  const [users, setUsers] = useState(usersData);
 
   const goToDetails = (id) => {
     navigate(`/api/users/${id}`);
   };
+
   const handleNew = () => {
     navigate("/api/users/new");
   };
+
   const handleEdit = (user) => {
-    console.log("Edit user", user);
     navigate(`/api/users/${user.id}/edit`);
   };
+
   const handleDelete = (id) => {
     console.log("Delete user", id);
+
+    // Demo with Local Data: usersData
+    usersData.splice(
+      usersData.findIndex((user) => user.id === id),
+      1
+    );
+    setUsers([...usersData]);
   };
 
   return (
@@ -31,13 +42,14 @@ export default function Users() {
       <div className="users mt-5">
         {users &&
           users.map((user) => (
-            <div key={user.id} className="user flex flex-row mt-1">
+            <div
+              key={user.id}
+              className="user flex flex-row justify-between mt-1 paper">
               <p
-                className="text-xl font-bold cursor-pointer"
+                className="text-xl font-bold cursor-pointer flex-center"
                 onClick={() => goToDetails(user.id)}>
-                {user.name}
+                {`${user.id}. ${user.username}`}
               </p>
-              <p className="text-lg ml-2">{user.email}</p>
               <div className="control">
                 <div
                   className="btn btn-warning ml-2"

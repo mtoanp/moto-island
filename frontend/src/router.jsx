@@ -9,7 +9,7 @@ import Register from "./pages/Register/Register";
 import Users from "./pages/Users/Users/Users";
 import NewUser from "./pages/Users/NewUser/NewUser";
 import UserDetails from "./pages/Users/UserDetails/UserDetails";
-import UpdateUser from "./pages/Users/UpdateUser/UpdateUser";
+import EditUser from "./pages/Users/EditUser/EditUser";
 
 const routerConfig = [
   {
@@ -62,7 +62,7 @@ const routerConfig = [
               },
               {
                 path: ":id/edit",
-                element: <UpdateUser />,
+                element: <EditUser />,
               },
             ],
           },
