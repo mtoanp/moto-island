@@ -15,6 +15,21 @@ const ordersData = [
   {
     id: 1,
     client: "John Doe",
+    total: 100,
+    products: [
+      {
+        id: 1,
+        name: "Product 1",
+        price: 10,
+        quantity: 2,
+      },
+      {
+        id: 2,
+        name: "Product 2",
+        price: 20,
+        quantity: 3,
+      },
+    ],
   },
 ];
 
