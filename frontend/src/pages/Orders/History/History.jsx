@@ -1,9 +1,10 @@
-import "./Orders.scss";
+import "./History.scss";
+import "../Orders/Orders.scss";
 import { ordersData } from "../../../../datas/data";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Orders() {
+export default function History() {
   const navigate = useNavigate();
   const [orders, setOrders] = useState(ordersData);
 
