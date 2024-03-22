@@ -42,11 +42,13 @@ export default function Users() {
       <div className="users mt-5">
         {users &&
           users.map((user) => (
-            <div key={user.id} className="user flex flex-row mt-1">
+            <div
+              key={user.id}
+              className="user flex flex-row justify-between mt-1 paper">
               <p
-                className="text-xl font-bold cursor-pointer"
+                className="text-xl font-bold cursor-pointer flex-center"
                 onClick={() => goToDetails(user.id)}>
-                {user.username}
+                {`${user.id}. ${user.username}`}
               </p>
               <div className="control">
                 <div
