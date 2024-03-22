@@ -1,6 +1,7 @@
 import "./OrderDetails.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { ordersData } from "../../../../datas/data";
+import Products from "../../Products/Products/Products";
 
 export default function OrderDetails() {
   const navigate = useNavigate();
@@ -11,6 +12,10 @@ export default function OrderDetails() {
     navigate("/api/orders");
   };
 
+  const handleEdit = () => {
+    navigate(`/api/orders/${order.id}/edit`);
+  };
+
   const handlePrint = () => {
     console.log("Print");
   };
@@ -18,14 +23,30 @@ export default function OrderDetails() {
   return (
     <div className="OrderDetails-page full-page flex-center flex-col">
       <h1 className="text-3xl font-bold text-red-300">OrderDetails</h1>
-      {/* <p>{order.id}</p> */}
-      <p>{order.client}</p>
+      {order && (
+        <div className="order-container">
+          <p>Client: {order.client}</p>
 
-      <div className="print btn btn-success" onClick={handlePrint}>
-        Print
-      </div>
+          <div className="products">
+            <h2>Products</h2>
+            <Products products={order.products} />
+          </div>
 
-      <div className="goBack btn btn-secondary" onClick={goBack}>
+          <p>Total: {order.total || 0}</p>
+
+          <div className="control">
+            <div className="btn btn-warning ml-2" onClick={handleEdit}>
+              Edit
+            </div>
+          </div>
+
+          <div className="print btn btn-success mt-4" onClick={handlePrint}>
+            Print
+          </div>
+        </div>
+      )}
+
+      <div className="goBack btn btn-secondary mt-2" onClick={goBack}>
         Go Back
       </div>
     </div>
