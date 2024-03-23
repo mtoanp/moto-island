@@ -1,58 +1,39 @@
 import "./LogIn.scss";
 import { useAuth } from "../../contexts/AuthContext";
-import { Link } from "react-router-dom";
 
-import purpleSky from "../../assets/purpleSky.jpg";
 export default function LogIn() {
-	const { authLogIn } = useAuth();
+  const { authLogIn } = useAuth();
 
-	return (
-		<section className="main">
-			<img src={purpleSky} alt="..." className="login-bg" />
-			<div className="login-page">
-				<div className="auth-container text-center ">
-					<button
-						className="btn btn-primary "
-						onClick={() => authLogIn("user")}
-					>
-						<Link to="/">Us</Link>
-					</button>
-					<button
-						className="btn btn-primary ml-4"
-						onClick={() => authLogIn("admin")}
-					>
-						<Link to="/">Ad</Link>
-					</button>
-				</div>
-				<div className="login-form">
-					<h1 className="login">Login</h1>
-					<form>
-						<div className="input-box">
-							<input
-								type="text"
-								placeholder="Username"
-								id="username"
-								name="username"
-								required
-							/>
-							<i className="bx bxs-user"></i>
-						</div>
-						<div className="input-box">
-							<input
-								type="password"
-								placeholder="Password"
-								id="password"
-								name="password"
-								required
-							/>
-							<i className="bx bxs-lock-alt"></i>
-						</div>
-						<button type="submit" className="login-button">
-							Login
-						</button>
-					</form>
-				</div>
-			</div>
-		</section>
-	);
+  return (
+    <div className="login-page full-page flex-center flex-col">
+      <div className="auth-container paper">
+        (Testing) LogIn as:
+        <button
+          className="btn btn-primary ml-4"
+          onClick={() => authLogIn("user")}>
+          User
+        </button>
+        <button
+          className="btn btn-primary ml-4"
+          onClick={() => authLogIn("admin")}>
+          Admin
+        </button>
+      </div>
+
+      <div className="login-form paper mt-4">
+        <h1 className="text-xl text-red-300">Login</h1>
+        <form>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" name="username" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  );
 }
