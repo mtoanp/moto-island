@@ -1,11 +1,15 @@
 import "./NewOrder.scss";
 import FormOrder from "../FormOrder/FormOrder";
+import mansky from "../../../assets/mansky.jpg";
 
 export default function NewOrder() {
-  return (
-    <div className="NewOrder full-page flex-center flex-col">
-      <h1 className="text-3xl font-bold text-red-300">New Order</h1>
-      <FormOrder />
-    </div>
-  );
+	return (
+		<div className="biggest-stage ">
+			<img src={mansky} alt="..." className="background-stage" />
+			<div className="second-stage">
+				<div className="title-stage">New Order</div>
+				<FormOrder />
+			</div>
+		</div>
+	);
 }
