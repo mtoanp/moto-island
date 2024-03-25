@@ -1,1 +1,22 @@
-// HomePage styles
+// OrderDetails styles
+.OrderDetails-page {
+    display: flex;
+    flex-direction: column;
+    * {
+        border: 1px solid green;
+    }
+    
+    .order-container {
+        padding: 1em;
+        // height: 100%;
+        .header {
+            height: 30%;
+        }
+        .body {
+            height: 50%;
+        }
+        .footer {
+            height: 20%;
+        }
+    }
+}

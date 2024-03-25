@@ -22,7 +22,7 @@ export default function OrderDetails() {
 
   return (
     <div className="OrderDetails-page full-page flex-center flex-col">
-      <h1 className="text-3xl font-bold text-red-300">OrderDetails</h1>
+      {/* <h1 className="text-3xl font-bold text-red-300">OrderDetails</h1>
       {order && (
         <div className="order-container">
           <p>Client: {order.client}</p>
@@ -48,6 +48,13 @@ export default function OrderDetails() {
 
       <div className="goBack btn btn-secondary mt-2" onClick={goBack}>
         Go Back
+      </div> */}
+
+
+      <div className="order-container full-page">
+        <div className="header"></div>
+        <div className="body"></div>
+        <div className="footer"></div>
       </div>
     </div>
   );
