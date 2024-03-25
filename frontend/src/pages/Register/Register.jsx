@@ -10,13 +10,22 @@ export default function Register() {
 				<div className="login-form">
 					<h1 className="login-title">Register</h1>
 					<div className="input-box">
-						<input type="text" id="username" required="required" />
-						<label htmlFor="">Email</label>
+						<input
+							type="text"
+							id="username"
+							required="required"
+							autoComplete="off"
+						/>
+						<label className="user-label" htmlFor="">
+							Email
+						</label>
 						<i className="bx bxs-user"></i>
 					</div>
 					<div className="input-box">
 						<input type="password" id="password" required="required" />
-						<label htmlFor="">Password</label>
+						<label className="pass-label" htmlFor="">
+							Password
+						</label>
 						<i className="bx bxs-lock-alt"></i>
 					</div>
 					<div className="input-box">
