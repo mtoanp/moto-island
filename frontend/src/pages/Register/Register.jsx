@@ -16,23 +16,17 @@ export default function Register() {
 							required="required"
 							autoComplete="off"
 						/>
-						<label className="user-label" htmlFor="">
-							Email
-						</label>
+						<label htmlFor="">Email</label>
 						<i className="bx bxs-user"></i>
 					</div>
 					<div className="input-box">
 						<input type="password" id="password" required="required" />
-						<label className="pass-label" htmlFor="">
-							Password
-						</label>
+						<label htmlFor="">Password</label>
 						<i className="bx bxs-lock-alt"></i>
 					</div>
 					<div className="input-box">
 						<input type="password" id="password" required="required" />
-						<label className="pass-label" htmlFor="">
-							Confirm Password
-						</label>
+						<label htmlFor="">Confirm Password</label>
 						<i className="bx bxs-lock-alt"></i>
 					</div>
 					<button type="submit" className="login-button">

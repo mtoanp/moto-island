@@ -199,7 +199,8 @@ $bc: #dfd7d7;
 	}
 	.second-stage {
 		z-index: 1;
-		width: 420px;
+		width: 30%;
+		height: 60%;
 		background: purple;
 		color: white;
 		border-radius: 10px;
@@ -210,59 +211,10 @@ $bc: #dfd7d7;
 		flex-direction: column;
 		justify-content: center;
 		.title-stage {
-			font-weight: 600;
+			height: 10%;
+			font-weight: 500;
 			font-size: 36px;
 			text-align: center;
-		}
-		.third-stage {
-			.newOrderform {
-				.input-box {
-					position: relative;
-					width: 100%;
-					height: 50px;
-					margin: 30px 0;
-					input {
-						width: 100%;
-						height: 100%;
-						background: transparent;
-						border: none;
-						outline: none;
-						border: 2px solid rgba(255, 255, 255, 0.2);
-						border-radius: 5px;
-						font-size: 1em;
-						transition: 0.5s;
-						color: white;
-						padding: 20px 45px 20px 20px;
-					}
-					label {
-						position: absolute;
-						left: 0;
-						padding: 14px;
-						pointer-events: none;
-						font-size: 1em;
-						color: black;
-						text-transform: uppercase;
-						transition: 0.5s;
-					}
-					input:valid ~ label,
-					input:focus ~ label {
-						color: white;
-						transform: translateX(10px) translateY(-7px);
-						font-size: 0.65em;
-						padding: 0 10px;
-						background: black;
-						border-left: 1px solid black;
-						border-right: 1px solid black;
-						letter-spacing: 0.2em;
-					}
-					input:valid,
-					input:focus {
-						border: 3px solid white;
-					}
-				}
-				.products {
-				}
-			}
 		}
 	}
 }
@@ -270,8 +222,11 @@ $bc: #dfd7d7;
 	position: relative;
 	width: 100%;
 	height: 50px;
-	margin: 30px 0;
-	input {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	.input-typo {
+		margin: 8px 0;
 		width: 100%;
 		height: 100%;
 		background: transparent;
@@ -282,9 +237,10 @@ $bc: #dfd7d7;
 		font-size: 1em;
 		transition: 0.5s;
 		color: white;
-		padding: 20px 45px 20px 20px;
+		padding: 20px 45px 2px 20px;
 	}
-	label {
+	.label-typo {
+		position: relative;
 		position: absolute;
 		left: 0;
 		padding: 14px;
@@ -294,19 +250,17 @@ $bc: #dfd7d7;
 		text-transform: uppercase;
 		transition: 0.5s;
 	}
-	input:valid ~ label,
-	input:focus ~ label {
+	.input-typo:valid ~ .label-typo,
+	.input-typo:focus ~ .label-typo {
 		color: white;
-		transform: translateX(10px) translateY(-7px);
+		transform: translateX(10px) translateY(-1px);
 		font-size: 0.65em;
 		padding: 0 10px;
 		background: black;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
 		letter-spacing: 0.2em;
 	}
-	input:valid,
-	input:focus {
+	.input-typo:valid,
+	.input-typo:focus {
 		border: 3px solid white;
 	}
 }
