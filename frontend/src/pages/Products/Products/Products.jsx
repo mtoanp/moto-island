@@ -2,7 +2,7 @@ import "./Products.scss";
 
 export default function Products({ products, removeProductFromOrder }) {
 	return (
-		<div className="third-stage text-purple-600">
+		<div className="third-stage text-white">
 			{products &&
 				products.length > 0 &&
 				products.map((item, index) => (
