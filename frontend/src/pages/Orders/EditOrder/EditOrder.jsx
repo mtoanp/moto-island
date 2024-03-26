@@ -2,15 +2,19 @@ import "./EditOrder.scss";
 import { useParams } from "react-router-dom";
 import { ordersData } from "../../../../datas/data";
 import FormOrder from "../FormOrder/FormOrder";
+import mansky from "../../../assets/mansky.jpg";
 
 export default function EditOrder() {
-  const { id } = useParams();
-  const order = ordersData.find((order) => order.id === parseInt(id));
+	const { id } = useParams();
+	const order = ordersData.find((order) => order.id === parseInt(id));
 
-  return (
-    <div className="EditOrder-page full-page flex-center flex-col">
-      <h1 className="text-3xl font-bold text-red-300">EditOrder</h1>
-      <FormOrder order={order} />
-    </div>
-  );
+	return (
+		<div className="biggest-stage">
+			<img src={mansky} alt="..." className="background-stage" />
+			<div className="second-stage">
+				<div className="title-stage">Edit Order</div>
+				<FormOrder order={order} />
+			</div>
+		</div>
+	);
 }
