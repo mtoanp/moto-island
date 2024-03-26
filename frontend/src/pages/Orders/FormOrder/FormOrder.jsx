@@ -60,9 +60,11 @@ export default function FormOrder({ order }) {
 
 	return (
 		<div className="third-stage">
-			<form onSubmit={handleSubmit} className="newOrderform">
-				<div className="input-box">
+			<form onSubmit={handleSubmit}>
+				<div className="input-box-template">
+					<div className="w-[500px] "></div>
 					<input
+						className="input-typo"
 						type="text"
 						id="client"
 						name="client" // Add this line
@@ -70,17 +72,18 @@ export default function FormOrder({ order }) {
 						onChange={handleChange}
 						required="required"
 					/>
-					<label htmlFor="">Client name</label>
+					<label className="label-typo" htmlFor="">
+						Client name
+					</label>
 				</div>
 				<div className="products">
-					<h2>Products</h2>
 					<Products
 						products={products}
 						removeProductFromOrder={removeProductFromOrder}
 					/>
 				</div>
 
-				<div className="product-form mt-4">
+				<div className="product-form ">
 					<FormOrderProduct addProductToOrder={addProductToOrder} />
 				</div>
 
