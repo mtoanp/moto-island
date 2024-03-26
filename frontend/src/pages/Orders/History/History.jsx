@@ -35,7 +35,7 @@ export default function History() {
 
 	return (
 		<div className="orders-page full-page flex-center flex-col">
-			<div className="background-history absolute z-100 ">
+			<div className="background-stage absolute ">
 				<img src={history} alt="" />
 			</div>
 			<div className="history-form-border">

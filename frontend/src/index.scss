@@ -126,7 +126,6 @@ $bc: #dfd7d7;
 					pointer-events: none;
 					font-size: 1em;
 					color: $bc;
-					// color: black;
 					text-transform: uppercase;
 					transition: 0.5s;
 				}
@@ -140,13 +139,11 @@ $bc: #dfd7d7;
 					background: rgba(254, 81, 28, 0.962);
 					letter-spacing: 0.2em;
 					border-radius: 4px;
-					// border: 1px solid $bc;
 				}
 				input:valid,
 				input:focus {
 					border: 2px solid $bc;
 					background: transparent;
-					// border-top: none;
 				}
 			}
 			i {
@@ -196,6 +193,7 @@ $bc: #dfd7d7;
 		width: 100%;
 		object-fit: cover;
 		position: absolute;
+		z-index: 0;
 	}
 	.second-stage {
 		z-index: 11;
@@ -305,11 +303,11 @@ $bc: #dfd7d7;
 
 .btn-secondary {
 	background-color: #f1f1f1;
-	color: #4b70e2;
+	color: black;
 	transition: all 0.5s ease;
 	&:hover {
 		color: white;
-		background: #2f091d;
+		background: black;
 	}
 }
 

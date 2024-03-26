@@ -2,6 +2,7 @@ import "./OrderDetails.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { ordersData } from "../../../../datas/data";
 import Products from "../../Products/Products/Products";
+import mansky from "../../../assets/mansky.jpg";
 
 export default function OrderDetails() {
   const navigate = useNavigate();
@@ -86,18 +87,18 @@ export default function OrderDetails() {
         <div className="order-container">
           <p>Client: {order.client}</p>
 
-          <div className="products">
-            <h2>Products</h2>
-            <Products products={order.products} />
-          </div>
+						<div className="products">
+							<h2>Products:</h2>
+							<Products products={order.products} />
+						</div>
 
-          <p>Total: {order.total || 0}</p>
+						<p>Total: {order.total || 0}</p>
 
-          <div className="control">
-            <div className="btn btn-warning ml-2" onClick={handleEdit}>
-              Edit
-            </div>
-          </div>
+						<div className="control">
+							<div className="btn btn-warning " onClick={handleEdit}>
+								Edit
+							</div>
+						</div>
 
           <div className="print btn btn-success mt-4" onClick={handlePrint}>
             Print
