@@ -60,9 +60,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.background-secondary {
-	background: linear-gradient(to bottom, #ffffff 0%, #ffffcc 100%);
-}
 
 // ================================================================== //
 // LOGIN & REGISTER
@@ -185,6 +182,90 @@ $bc: #dfd7d7;
 }
 
 // ================================================================== //
+// Form //
+// ================================================================== //
+.biggest-stage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	.background-stage {
+		background-size: cover;
+		background-position: center;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		position: absolute;
+	}
+	.second-stage {
+		z-index: 11;
+		width: 30%;
+		height: 60%;
+		background: purple;
+		color: white;
+		border-radius: 10px;
+		padding: 30px 40px;
+		background: transparent;
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(20px);
+		flex-direction: column;
+		justify-content: center;
+		.title-stage {
+			height: 10%;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 36px;
+			text-align: center;
+		}
+	}
+}
+.input-box-template {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	.input-typo {
+		margin: 8px 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		border: none;
+		outline: none;
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		border-radius: 5px;
+		font-size: 1em;
+		transition: 0.5s;
+		color: white;
+		padding: 20px 45px 2px 20px;
+	}
+	.label-typo {
+		position: relative;
+		position: absolute;
+		left: 0;
+		padding: 14px;
+		pointer-events: none;
+		font-size: 1em;
+		color: black;
+		text-transform: uppercase;
+		transition: 0.5s;
+	}
+	.input-typo:valid ~ .label-typo,
+	.input-typo:focus ~ .label-typo {
+		color: white;
+		transform: translateX(10px) translateY(-1px);
+		font-size: 0.65em;
+		padding: 0 10px;
+		background: black;
+		letter-spacing: 0.2em;
+	}
+	.input-typo:valid,
+	.input-typo:focus {
+		border: 3px solid white;
+	}
+}
+// ================================================================== //
 // BUTTON
 // ================================================================== //
 .btn {
@@ -195,45 +276,70 @@ $bc: #dfd7d7;
 	outline: none;
 	cursor: pointer;
 }
-
+.btn-update {
+	width: 100%;
+	height: 45px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: #c84c00;
+	text-transform: uppercase;
+	transition: all 0.5s ease;
+	&:hover {
+		color: #150250;
+		background: #d1d4fd;
+	}
+}
 .btn-primary {
 	background-color: #4b70e2;
 	color: #f9f9f9;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #6b87dc;
-		color: #f9f9f9;
+		color: white;
+		background: #2f091d;
 	}
 }
 
 .btn-secondary {
 	background-color: #f1f1f1;
 	color: #4b70e2;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #e1e1e1;
+		color: white;
+		background: #2f091d;
 	}
 }
 
 .btn-success {
 	background-color: #4caf50;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #45a049;
+		color: black;
+		background: #ac1005;
 	}
 }
 
 .btn-warning {
 	background-color: #ff9800;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #e68a00;
+		color: gray;
+		background: #2f091d;
 	}
 }
 
 .btn-danger {
 	background-color: #d83c31;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #da190b;
+		color: black;
+		background: #ffd900;
 	}
 }
 
