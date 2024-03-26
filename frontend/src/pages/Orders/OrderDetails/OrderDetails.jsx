@@ -21,7 +21,66 @@ export default function OrderDetails() {
   };
 
   return (
-    <div className="OrderDetails-page full-page flex-center flex-col">
+    <div className="OrderDetails-page">
+      <div className="order-container">
+        {/* HEAD */}
+        <div className="head">
+          <div className="row1 flex flex-row">
+            <div className="left">
+              <div className="magazin-info rounded">MOTO ISLAND</div>
+
+              <div className="facture-number rounded mt-2 bg-gray-400">
+                Facture nUmero: 123456
+              </div>
+            </div>
+
+            <div className="right ml-4">
+              <div className="row1 flex justify-between">
+                <div className="logo">Logo</div>
+                <div className="date rounded">
+                  <p>date 01/01/2024</p>
+                  <p>date 01/01/2024</p>
+                </div>
+              </div>
+
+              <div className="client flex justify-center mt-4">
+                <div className="rounded w-1/2">Client</div>
+              </div>
+            </div>
+          </div>
+          <div className="row2 mt-2">
+            <div className="moto-info rounded">
+              <p>Imma: 123456</p>
+              <p>Km: 123456</p>
+            </div>
+          </div>
+        </div>
+
+        {/* BODY */}
+        <div className="body flex flex-col">
+          <div className="products-container flex-1 border">
+            <div className="title"></div>
+            <div className="products"></div>
+          </div>
+
+          <div className="products-sub flex">
+            <div className="left border">...</div>
+            <div className="total flex flex-col flex-1 border">
+              <div className="border">Total</div>
+              <div className="border">Total</div>
+              <div className="border">Total</div>
+            </div>
+            <div className="date rounded ml-4 mt-4 bg-gray-400">
+              {" "}
+              Date de Paiement : 01/01/2024
+            </div>
+          </div>
+        </div>
+
+        {/* FOOT */}
+        <div className="foot mt-4"></div>
+      </div>
+
       {/* <h1 className="text-3xl font-bold text-red-300">OrderDetails</h1>
       {order && (
         <div className="order-container">
@@ -49,13 +108,6 @@ export default function OrderDetails() {
       <div className="goBack btn btn-secondary mt-2" onClick={goBack}>
         Go Back
       </div> */}
-
-
-      <div className="order-container full-page">
-        <div className="header"></div>
-        <div className="body"></div>
-        <div className="footer"></div>
-      </div>
     </div>
   );
 }

@@ -15,4 +15,12 @@
 	footer {
 		height: 50px;
 	}
+
+	// remove footer on orderDetails page
+	&:has(.OrderDetails-page) {
+		nav,
+		footer {
+			display: none;
+		}
+	}
 }
