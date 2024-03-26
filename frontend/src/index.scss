@@ -212,6 +212,7 @@ $bc: #dfd7d7;
 		justify-content: center;
 		.title-stage {
 			height: 10%;
+			text-transform: uppercase;
 			font-weight: 500;
 			font-size: 36px;
 			text-align: center;
@@ -275,45 +276,70 @@ $bc: #dfd7d7;
 	outline: none;
 	cursor: pointer;
 }
-
+.btn-update {
+	width: 100%;
+	height: 45px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: #c84c00;
+	text-transform: uppercase;
+	transition: all 0.5s ease;
+	&:hover {
+		color: #150250;
+		background: #d1d4fd;
+	}
+}
 .btn-primary {
 	background-color: #4b70e2;
 	color: #f9f9f9;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #6b87dc;
-		color: #f9f9f9;
+		color: white;
+		background: #2f091d;
 	}
 }
 
 .btn-secondary {
 	background-color: #f1f1f1;
 	color: #4b70e2;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #e1e1e1;
+		color: white;
+		background: #2f091d;
 	}
 }
 
 .btn-success {
 	background-color: #4caf50;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #45a049;
+		color: black;
+		background: #ac1005;
 	}
 }
 
 .btn-warning {
 	background-color: #ff9800;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #e68a00;
+		color: gray;
+		background: #2f091d;
 	}
 }
 
 .btn-danger {
 	background-color: #d83c31;
 	color: white;
+	transition: all 0.5s ease;
 	&:hover {
-		background-color: #da190b;
+		color: black;
+		background: #ffd900;
 	}
 }
 

@@ -2,14 +2,11 @@ import "./Products.scss";
 
 export default function Products({ products, removeProductFromOrder }) {
 	return (
-		<div className="order-items text-red-600">
+		<div className="third-stage text-purple-600">
 			{products &&
 				products.length > 0 &&
 				products.map((item, index) => (
-					<div
-						key={index}
-						className="item  paper flex flex-col justify-between"
-					>
+					<div key={index} className="item  flex flex-col justify-between">
 						<p>{item.name}</p>
 						<p>{item.quantity}</p>
 						<p>{item.price}</p>
