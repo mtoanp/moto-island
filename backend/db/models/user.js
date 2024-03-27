@@ -10,14 +10,17 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    // toJSON() {
+    //   return { ...this.get(), id: undefined };
+    // }
   }
+
   User.init(
     {
       uuid: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
-        // allowNull: false,
-        // primaryKey: true,
       },
       name: {
         type: DataTypes.STRING,
@@ -25,10 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       email: {
         type: DataTypes.STRING,
-      },
-      roles: {
-        type: DataTypes.STRING,
-        allowNull: false,
       },
     },
     {
