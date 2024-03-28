@@ -1,11 +1,13 @@
 import "./Users.scss";
 import { usersData } from "../../../../datas/data";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import UserService from "../../../services/UserService";
 
 export default function Users() {
   const navigate = useNavigate();
-  const [users, setUsers] = useState(usersData);
+  const [users, setUsers] = useState();
+  // const [users, setUsers] = useState(usersData);
 
   const goToDetails = (id) => {
     navigate(`/api/users/${id}`);
@@ -30,6 +32,26 @@ export default function Users() {
     setUsers([...usersData]);
   };
 
+  useEffect(() => {
+    UserService.fetchUsers().then((data) => {
+      setUsers(data);
+    });
+    // const fetchUsers = async () => {
+    //   try {
+    //     const response = await fetch("http://localhost:3000/api/users");
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch users");
+    //     }
+    //     const data = await response.json();
+    //     setUsers(data);
+    //   } catch (error) {
+    //     console.error("Error fetching users:", error);
+    //   }
+    // };
+
+    // fetchUsers();
+  }, []);
+
   return (
     <div className="users-page full-page flex-center flex-col">
       <div className="header flex flex-row justify-between">
@@ -43,12 +65,12 @@ export default function Users() {
         {users &&
           users.map((user) => (
             <div
-              key={user.id}
+              key={user.uuid}
               className="user flex flex-row justify-between mt-1 paper">
               <p
                 className="text-xl font-bold cursor-pointer flex-center"
-                onClick={() => goToDetails(user.id)}>
-                {`${user.id}. ${user.username}`}
+                onClick={() => goToDetails(user.uuid)}>
+                {`${user.uuid}. ${user.name}`}
               </p>
               <div className="control">
                 <div
