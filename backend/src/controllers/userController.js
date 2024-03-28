@@ -1,4 +1,5 @@
 const { User } = require("../../db/models");
+const bcrypt = require("bcrypt");
 
 class UserController {
   async findAll(req, res, next) {
@@ -22,8 +23,11 @@ class UserController {
   }
 
   async create(req, res, next) {
+    const userData = req.body;
+    userData.password = bcrypt.hashSync(userData.password, 10);
+
     try {
-      const user = await User.create(req.body);
+      const user = await User.create(userData);
       return res.json(user);
     } catch (error) {
       next(error);

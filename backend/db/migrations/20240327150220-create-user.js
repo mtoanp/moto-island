@@ -12,15 +12,54 @@ module.exports = {
       uuid: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        // allowNull: false,
-        // primaryKey: true,
       },
       name: {
         type: Sequelize.STRING,
       },
       email: {
         type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+        validator: {
+          isEmail: true,
+        },
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      role: {
+        type: Sequelize.STRING,
+        defaultValue: "user",
+      },
+      phone: {
+        type: Sequelize.STRING,
+      },
+      shopName: {
+        type: Sequelize.STRING,
+      },
+      shopPhone: {
+        type: Sequelize.STRING,
+      },
+      shopAddress: {
+        type: Sequelize.STRING,
+      },
+      shopLogo: {
+        type: Sequelize.STRING,
+      },
+      siret: {
+        type: Sequelize.STRING,
+      },
+      TvaNumber: {
+        type: Sequelize.STRING,
+      },
+      capital: {
+        type: Sequelize.STRING,
+      },
+      siteWeb: {
+        type: Sequelize.STRING,
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
