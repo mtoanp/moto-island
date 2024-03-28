@@ -1,23 +1,23 @@
 "use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, DataTypes) {
     await queryInterface.createTable("Users", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
       },
       uuid: {
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
       },
       name: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       email: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validator: {
@@ -25,52 +25,52 @@ module.exports = {
         },
       },
       password: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       role: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         defaultValue: "user",
       },
       phone: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       shopName: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       shopPhone: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       shopAddress: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       shopLogo: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       siret: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       TvaNumber: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       capital: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
       siteWeb: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
       },
 
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: DataTypes.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: DataTypes.DATE,
       },
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, DataTypes) {
     await queryInterface.dropTable("users");
   },
 };

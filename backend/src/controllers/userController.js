@@ -36,9 +36,13 @@ class UserController {
 
   async update(req, res, next) {
     const uuid = req.params.uuid;
+    const userData = req.body;
     try {
       const user = await User.findOne({ where: { uuid } });
-      await user.update(req.body);
+      if (userData.password) {
+        userData.password = bcrypt.hashSync(userData.password, 10);
+      }
+      await user.update(userData);
       return res.json(user);
     } catch (error) {
       next(error);
