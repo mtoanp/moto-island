@@ -3,9 +3,14 @@ const cors = require("cors");
 const logger = require("morgan");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 
+const corsOptions = {
+  origin: [process.env.FRONTEND_URL, "http://localhost:5000"],
+  credentials: true, // Allow credentials (including HTTP-only cookies)
+};
+
 // Create an Express application
 const app = express();
-app.use(logger("dev")).use(express.json()); // Parse JSON bodies
+app.use(logger("dev")).use(express.json()).use(cors(corsOptions)); // Parse JSON bodies
 
 // ROUTER
 const router = require("./routes/router");
