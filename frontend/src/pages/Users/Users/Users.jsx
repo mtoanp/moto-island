@@ -2,6 +2,7 @@ import "./Users.scss";
 import { usersData } from "../../../../datas/data";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import UserService from "../../../services/UserService";
 
 export default function Users() {
   const navigate = useNavigate();
@@ -32,20 +33,23 @@ export default function Users() {
   };
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/api/users");
-        if (!response.ok) {
-          throw new Error("Failed to fetch users");
-        }
-        const data = await response.json();
-        setUsers(data);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    };
+    UserService.fetchUsers().then((data) => {
+      setUsers(data);
+    });
+    // const fetchUsers = async () => {
+    //   try {
+    //     const response = await fetch("http://localhost:3000/api/users");
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch users");
+    //     }
+    //     const data = await response.json();
+    //     setUsers(data);
+    //   } catch (error) {
+    //     console.error("Error fetching users:", error);
+    //   }
+    // };
 
-    fetchUsers();
+    // fetchUsers();
   }, []);
 
   return (
